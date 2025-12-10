@@ -33,6 +33,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 ###############################################
 
 navbar-links:
+  Blog: "blog"
   Projects: "projects"
   About Me: "aboutme"
   Resume: "resume"
