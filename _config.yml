@@ -157,7 +157,7 @@ site-css: "/assets/css/custom-styles.css"
 #gtag: "G-XXXXXXXXXX"
 
 # Build settings
-theme: beautiful-jekyll-theme
+remote_theme: daattali/beautiful-jekyll
 
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
@@ -184,3 +184,4 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-remote-theme
