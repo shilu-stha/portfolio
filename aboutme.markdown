@@ -5,28 +5,41 @@ permalink: /aboutme/
 # subtitle: Why you'd want to go on a date with me
 ---
 
-- 10+ years of experience in analysis, design, development, testing and administration of mobile applications.
-- 5 years of experience in native android mobile application development using both Core Java and Android using Eclipse and Android Studio.
-- 5+ years of experience in hybrid mobile application development using React Native for both iOS and Android applications using Visual Studio Code, Xcode and Android Studio.
-- 2+ years of expertise in managing cross functional team of various stacks, Frontend, Mobile, Backend and QA.
+- **12+ Years of Full-Stack Engineering**: Expert in the end-to-end SDLC, from system design to cloud administration, with a focus on building scalable, mobile-first architectures.
+- **Native & Hybrid Mastery**: 10+ years of deep expertise across Native Android (Java) and React Native, delivering high-performance applications for both iOS and Android.
+- **Strategic Technical Leadership**: 2+ years leading cross-functional teams (Mobile, Web, Backend, and QA) to align complex technical stacks with business objectives.
+- **AI Integration & Innovation**: Currently enhancing full-stack solutions by integrating Machine Learning and Generative AI through an MSc in AI at the University of Bath.
 
 Personally, I have a strong value set, and I believe this is the driver for me to make decisions in life.
 
-### Communication
+## My Values & Leadership Philosophy
+I believe that technical excellence is built on a foundation of strong personal values. These principles guide my decision-making and how I show up for my team:
 
-Communication is of highest importance to me. If you can’t say it in words then type it but at least communicate. However, I believe more in verbal and in-person communication. I am a good listener, I will listen to you patiently and understand your perspective. However, when time comes I wish the same from you, to listen patiently and understand.
+### Communication & Active Listening: 
+I prioritize verbal and in-person communication to ensure clarity and empathy. I am a patient listener who seeks to understand different perspectives before acting. Professionally, this fosters a culture of psychological safety where team members feel heard and valued.
 
-### Honesty
+### Radical Honesty: 
+I value transparency, even when the truth is difficult. By being honest about challenges and setbacks, we can address them head-on and iterate toward a solution. This saves time and builds deep trust within a project.
 
-With open communication I value honesty. I value honestly even if it is bitter, so even if its harsh we can be honest about it and work towards improving it. If there’s no resolution then we can part ways anyhow we’ll have the satisfaction that we tried.
+### Humbleness & Respect: 
+Guided by the belief that one should "keep their feet on the ground even while their head is in the clouds," I approach every interaction with respect. I believe no one is too senior to learn something new from a peer.
 
-### Humbleness
+### Discipline & Hard Work: 
+My journey from Nepal to a Master’s program in the UK is a testament to the power of hard work. I bring a disciplined approach to my code and my commitments, ensuring that high-quality results are delivered consistently.
 
-Kindness and compassion is what I was broughup with. I believe that no one should forget their roots and even though their heads are in the cloud their feet should always be grounded. Meaning, inspite of your success or achievements you should always be humble and have a sense of respect for everyone.
+## Growth & Curiosity
 
-### Hardwork
+### Growth Mindset: 
+I am constantly striving for "better"—whether it’s refining a piece of architecture or improving my personal habits. I embrace feedback and reflection, often drawing inspiration from motivational literature to maintain a trajectory of continuous improvement.
 
-There is nothing more rewarding than hardwork. I've learned this throughout my childhood which helped shaped me become who I am at present. Hardwork with discipline will get your far more ahead in life than anything that comes easy.
+### Curiosity as a Fuel: 
+I am curious about almost everything in life. At work, this translates to a proactive exploration of new technologies (like AI) and a desire to understand the "why" behind every business requirement. This curiosity is what keeps my work innovative and my problem-solving fresh.
+
+## Mindfulness & Balance
+I believe that a sharp mind requires a peaceful spirit. My practice of yoga, meditation, and spiritual reflection is not just a hobby, it is my way of maintaining the focus and resilience needed for a high-stakes tech career. This mindful approach allows me to remain calm under pressure, maintain a high level of concentration during complex coding tasks, and bring a balanced, positive energy to my workplace.
 
 <b>
-I am open to communication, and if you believe I could be a good fit for a position at your company or if you have any ideas where I could offer support, I am eager to collaborate. Feel free to reach out to me via [LinkedIn](https://www.linkedin.com/in/shilushrestha/) or [Email](sth.shilu@gmail.com).
+### Let's Collaborate
+If you are looking for a seasoned leader who combines technical depth in FullStack/AI with a grounded, growth-oriented mindset, I would love to connect.
+
+Reach out via: [LinkedIn](https://www.linkedin.com/in/shilushrestha/) or [Email](sth.shilu@gmail.com).
