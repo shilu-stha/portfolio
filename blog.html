@@ -1,28 +1,19 @@
 ---
-layout: page
-title: Blog
-subtitle: Machine learning notes, projects, and reflections
+layout: default
+title: Writing
 permalink: /blog/
+summary: Notes on machine learning, reinforcement learning and moving from engineering into research.
 ---
+<h1>Writing</h1>
+<p class="lede">Notes on machine learning, RL and moving from engineering into research.</p>
 
-<div class="posts-list">
-  {% assign blog_pages = site.pages | where: "category", "blog" | sort: "date" | reverse %}
-  {% for post in blog_pages %}
-  <div class="post-preview">
-    <h2 class="post-title">
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </h2>
-    <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
-    <p>
-      {% if post.summary %}
-        {{ post.summary }}
-      {% else %}
-        {{ post.content | markdownify | strip_html | truncate: 200 }}
-      {% endif %}
-    </p>
-    <a class="btn btn-primary btn-sm" href="{{ post.url | relative_url }}">Read more</a>
-  </div>
-  <hr>
+{% assign posts = site.pages | where: "category", "blog" | sort: "date" | reverse %}
+<ul class="post-list">
+  {% for post in posts %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="years">{{ post.date | date: "%b %Y" }}</span>
+    {% if post.summary %}<p>{{ post.summary }}</p>{% endif %}
+  </li>
   {% endfor %}
-</div>
-
+</ul>
