@@ -1,39 +1,49 @@
 ---
-layout: home
-title: Hi, I'm Shilu
-share-title: Shilu Shrestha
-subtitle: MSc Artificial Intelligence (University of Bath) · Software Architect · Full-Stack & Mobile Engineer
+layout: default
 ---
+<section class="intro">
+  <h1>Hi, I'm Shilu.</h1>
+  <p class="tagline">{{ site.tagline }} · full-stack systems leadership meets applied ML and RL research</p>
 
-<div>
   <p>
-    I am a Senior Software Engineer with over 12 years of professional experience 
-    in the tech industry. My career began in 2012, where I spent several years mastering 
-    native Android development before evolving into a cross-platform expert specializing 
-    in React Native. Throughout my journey, I have remained dedicated to building high-impact 
-    applications that digitize complex processes and solve real-world problems.
-  </p>
-  <p>
-    Currently, I am advancing my expertise by pursuing an MSc in Artificial Intelligence 
-    at the University of Bath (2025–2026). My goal is to bridge the gap between traditional mobile 
-    architecture and cutting-edge AI, creating intelligent, data-driven applications that offer more 
-    than just a user interface.
+    I've spent more than 10 years shipping production software, and I'm now
+    finishing an MSc in Artificial Intelligence at the University of Bath. Since
+    July 2026 I've been a research assistant in Bath's Impact Lab, where I turn
+    research software into tools people can actually run. I work on the lab's
+    IRIS motion-capture system and build my own tools on top of it, like
+    <a href="{{ '/projects/#iris-studio' | relative_url }}">iris-studio</a>,
+    which streams live motion capture into Unity and VR.
   </p>
   <p>
-    I am actively exploring the intersection of Generative AI, Machine Learning, and Mobile Ecosystems. 
-    Whether it’s enhancing user experiences through On-Device AI or automating workflows, 
-    I am passionate about the next generation of mobile technology.
-  </p>
-    I am open to communication, and if you believe I could be a good fit for a
-    position at your company or if you have any ideas where I could offer
-    support, I am eager to collaborate. Feel free to reach out to me via
-    <a href="https://www.linkedin.com/in/shilushrestha/">LinkedIn</a> or
-    <a href="mailto: sth.shilu@gmail.com">Email</a>.
+    Before the MSc I led engineering teams. At Danphe Software Labs I built a
+    production RAG system on GPT-4o and set technical direction for 8
+    engineers. At Fleetpanda I spent five years on a React Native platform
+    behind 5M+ gallons of deliveries, where my IoT meter integration cut
+    delivery time by 22%. Before that I was CTO at Chitooo.
   </p>
   <p>
-    When I’m not in the lab or at my desk, you’ll find me on my mat practicing yoga to 
-    stay mindful and balanced. Coming from the beautiful landscapes of Nepal, 
-    I have a deep-rooted love for mountain trekking. I also find joy in the rhythm of dance 
-    and the imaginative worlds of fiction novels.
+    I'm looking for AI Solutions Engineer, ML Engineer and forward-deployed
+    roles: work where a model has to hold up against real users, real hardware
+    and real data. I care about plain communication and honest status, which
+    means saying what works and what doesn't.
   </p>
-</div>
+
+  <ul class="contact">
+    <li><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></li>
+    <li><a href="https://github.com/{{ site.contact.github }}">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/{{ site.contact.linkedin }}/">LinkedIn</a></li>
+    <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+  </ul>
+</section>
+
+<section class="facts">
+  <h2>Education</h2>
+  <p>MSc Artificial Intelligence, University of Bath, 2025–2026<br>
+     BEng Information Technology, Pokhara University, 2008–2012</p>
+
+  <h2>Also</h2>
+  <p>Poster presenter at the BCSWomen Lovelace Colloquium (April 2026), selected
+     from 260+ applicants. Student ambassador and teaching assistant at Bath.
+     Outside work I practise yoga, trek in Nepal's mountains, dance and read
+     fiction.</p>
+</section>
