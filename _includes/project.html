@@ -1,31 +1,45 @@
+{%- comment -%} include.variant: row | card | feature {%- endcomment -%}
 {% assign p = include.p %}
-<article class="project{% if p.draft %} is-draft{% endif %}" id="{{ p.id }}">
-  <h3>
-    <a href="#{{ p.id }}">{{ p.title }}</a>
-    {% if p.years %}<span class="years">{{ p.years }}</span>{% endif %}
-    {% if p.draft %}<span class="draft-tag">draft, hidden in production</span>{% endif %}
-  </h3>
-
-  {{ p.body | markdownify }}
-
-  {% if p.stack %}<p class="stack">{{ p.stack | join: " · " }}</p>{% endif %}
-
-  {% if p.links %}
-  <p class="links">
-    {% for l in p.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}
-  </p>
+{% capture visual %}
+  {% if p.media.video %}
+  <video controls muted playsinline preload="metadata" src="{{ p.media.video | relative_url }}"{% if p.media.poster %} poster="{{ p.media.poster | relative_url }}"{% endif %}></video>
+  {% elsif p.media.youtube %}
+  <iframe src="https://www.youtube-nocookie.com/embed/{{ p.media.youtube }}" title="{{ p.title }} demo" loading="lazy" allowfullscreen></iframe>
+  {% elsif p.media.image %}
+  <img{% if p.media.logo %} class="logo"{% endif %} src="{{ p.media.image | relative_url }}" alt="{{ p.media.caption | default: p.title }}" loading="lazy">
+  {% elsif p.motif %}
+  {% include motif.html name=p.motif labels=include.labels %}
   {% endif %}
+{% endcapture %}
+{% assign has_visual = visual | strip | size %}
 
-  {% if p.media.video or p.media.youtube or p.media.image %}
-  <figure>
-    {% if p.media.video %}
-    <video controls muted playsinline preload="metadata" src="{{ p.media.video | relative_url }}"{% if p.media.poster %} poster="{{ p.media.poster | relative_url }}"{% endif %}></video>
-    {% elsif p.media.youtube %}
-    <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/{{ p.media.youtube }}" title="{{ p.title }} demo" loading="lazy" allowfullscreen></iframe></div>
-    {% else %}
-    <img{% if p.media.logo %} class="logo"{% endif %} src="{{ p.media.image | relative_url }}" alt="{{ p.media.caption | default: p.title }}" loading="lazy">
-    {% endif %}
-    {% if p.media.caption %}<figcaption>{{ p.media.caption }}</figcaption>{% endif %}
+<article class="project {{ include.variant }}{% if p.draft %} is-draft{% endif %}" id="{{ p.id }}">
+  {% if has_visual > 0 %}
+  <figure class="cover{% if p.media.logo %} is-logo{% endif %}">
+    {{ visual }}
+    {% comment %} Captions describe real media, never the placeholder drawing. {% endcomment %}
+    {% if p.media.video or p.media.youtube or p.media.image %}{% if p.media.caption and include.variant != "card" %}<figcaption>{{ p.media.caption }}</figcaption>{% endif %}{% endif %}
   </figure>
   {% endif %}
+
+  <div class="text">
+    {% if p.eyebrow %}<p class="eyebrow">{{ p.eyebrow }}{% if p.years %} · {{ p.years }}{% endif %}</p>{% endif %}
+    <h3>
+      <a href="#{{ p.id }}">{{ p.title }}</a>
+      {% unless p.eyebrow %}{% if p.years %}<span class="years">{{ p.years }}</span>{% endif %}{% endunless %}
+    </h3>
+    {% if p.draft %}<p class="draft-tag">Draft, hidden in production</p>{% endif %}
+
+    {{ p.body | markdownify }}
+
+    {% if p.stack %}
+    <ul class="chips">{% for s in p.stack %}<li>{{ s }}</li>{% endfor %}</ul>
+    {% endif %}
+
+    {% if p.links %}
+    <p class="links">
+      {% for l in p.links %}<a href="{{ l.url }}">{{ l.label }} <span aria-hidden="true">→</span></a>{% endfor %}
+    </p>
+    {% endif %}
+  </div>
 </article>

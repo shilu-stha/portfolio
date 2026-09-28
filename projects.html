@@ -2,18 +2,47 @@
 layout: default
 title: Projects
 permalink: /projects/
-summary: Research, personal and industry projects by Shilu Shrestha, from hierarchical RL research to production RAG and IoT systems.
+summary: Bath Impact Lab research software, MSc AI work, personal projects and ten years of industry systems by Shilu Shrestha.
 ---
-<h1>Projects</h1>
-<p class="lede">Research first, then the products I've built and led, newest first within each group.</p>
+<header class="page-head">
+  <h1>Projects</h1>
+  <p class="lede">Research software at Bath's Impact Lab, my MSc in AI, the things I build for myself, and a decade of production systems.</p>
+  <nav class="jump">
+    {% for group in site.data.projects %}<a href="#{{ group.id }}">{% include icon.html name=group.icon %}{{ group.group }}</a>{% endfor %}
+  </nav>
+</header>
 
 {% for group in site.data.projects %}
-<section class="project-group">
-  <h2>{{ group.group }}</h2>
+<section class="project-group" id="{{ group.id }}">
+  <div class="group-head">
+    <span class="group-icon">{% include icon.html name=group.icon %}</span>
+    <div>
+      <h2>{{ group.group }}</h2>
+      {% if group.intro %}<p>{{ group.intro }}</p>{% endif %}
+    </div>
+  </div>
+
   {% for p in group.items %}
+    {% if p.featured %}{% include project.html p=p variant="feature" labels=true %}{% endif %}
+  {% endfor %}
+
+  {% assign shown = 0 %}
+  {% for p in group.items %}
+    {% if p.featured %}{% continue %}{% endif %}
+    {% unless p.draft and jekyll.environment == "production" %}{% assign shown = shown | plus: 1 %}{% endunless %}
+  {% endfor %}
+  {% assign odd = shown | modulo: 2 %}
+  <div class="{% if group.layout == 'cards' %}card-grid{% if odd == 0 %} two-up{% endif %}{% else %}row-list{% endif %}">
+  {% for p in group.items %}
+    {% if p.featured %}{% continue %}{% endif %}
     {% unless p.draft and jekyll.environment == "production" %}
-      {% include project.html p=p %}
+      {% if group.layout == "cards" %}
+        {% include project.html p=p variant="card" %}
+      {% else %}
+        {% include project.html p=p variant="row" %}
+      {% endif %}
     {% endunless %}
   {% endfor %}
+  </div>
 </section>
 {% endfor %}

@@ -1,14 +1,24 @@
-# Rendered by projects.html, in this order. Fields per project:
+# Rendered by projects.html, group by group. Group fields:
+#   id, group, intro, icon (lab | msc | personal | industry | apps), layout (rows | cards)
+# Project fields:
 #   id, title, years, body (markdown, first person), stack (list),
-#   links (list of {label, url}), media {video | youtube | image, poster, caption, logo}
+#   links (list of {label, url}), featured (big highlighted block),
+#   motif (line drawing used when there's no media: studio, window, lens,
+#     hierarchy, signal, agent, text, conv, gridworld, ledger, rag),
+#   media {video | youtube | image, poster, caption, logo}
 #   draft: true -> shown by `jekyll serve`, hidden in the production build.
 # Demo videos: drop an .mp4 in assets/video/ and set media.video to its path.
 
-- group: Research and current work
+- id: lab
+  group: Bath Impact Lab
+  intro: Research assistant in the Dev Squad since July 2026, turning the lab's research software into tools people can install and run.
+  icon: lab
+  layout: rows
   items:
     - id: iris-studio
       title: iris-studio
       years: 2026–present
+      motif: studio
       body: >-
         A monorepo I built to get live motion capture out of IRIS and into 3D
         worlds. An Electron app drives IRIS, a small WebSocket relay fans the
@@ -24,6 +34,7 @@
     - id: iris-starter-kit
       title: iris-starter-kit
       years: 2026–present
+      motif: window
       body: >-
         A desktop app that makes the lab's IRIS motion-capture engine usable
         without the command line: camera setup, a drawable capture area, and
@@ -38,66 +49,48 @@
     - id: recapture-iris
       title: Recapture IRIS and IRIS Core
       years: 2026–present
+      motif: lens
       body: >-
-        As a research assistant in the University of Bath's Impact Lab (Dev
-        Squad), I work across the front end and ML back end of the lab's
-        research software, turning academic outputs into tools people can
+        I work across the front end and ML back end of the lab's markerless
+        motion-capture software, turning research code into tools people can
         install and run.
       # TODO(Shilu): one concrete thing you shipped here, and confirm the lab is
       # happy for this to be described publicly.
       stack: [C++, Python, TypeScript]
 
+- id: msc
+  group: MSc Artificial Intelligence
+  intro: University of Bath, 2025–2026. My dissertation, then the coursework projects I'm proudest of.
+  icon: msc
+  layout: cards
+  items:
     - id: hrl-dissertation
       title: Computational modelling of biological HRL
       years: 2026
+      featured: true
+      eyebrow: MSc dissertation
+      motif: hierarchy
       body: >-
-        My MSc dissertation. I'm building hierarchical reinforcement learning
-        architectures that model how addiction takes over decision-making,
-        continuing the question from the paper below.
-      stack: [Python, Reinforcement Learning]  # TODO confirm framework
-
-    - id: doing-whats-not-wanted
-      title: "Doing what's not wanted"
-      years: 2022
-      body: >-
-        Code for the paper *Doing what's not wanted: conflict in incentives and
-        misallocation of behavioural control can lead to drug-seeking despite
-        adverse outcomes*, done with LNC2 at ENS Paris and funded by ERASMUS
-        iBrain. It proposes a hierarchical decision model in which drug rewards
-        make lower-level choices ignore negative consequences, with a
-        cost-benefit scheme that arbitrates control between levels.
-      stack: [Python, Hierarchical RL]
-      links:
-        - label: Paper (bioRxiv)
-          url: https://www.biorxiv.org/content/10.1101/2022.06.09.495458v1
-        - label: Code
-          url: https://github.com/shilu-stha/drug_rewards_HRL
+        Addiction is a decision-making problem: people keep choosing something
+        they know hurts them. I'm building hierarchical reinforcement learning
+        architectures that model how that happens, with high-level goals losing
+        control to low-level habits that drug rewards have reinforced.
+      stack: [Python, Hierarchical RL]  # TODO confirm framework
 
     - id: bioprocess-digital-twin
       title: Bioprocess digital twin
       years: 2025–2026
+      motif: signal
       body: >-
         I analysed 28 production batches, over 100,000 readings from 15 sensors,
-        to build anomaly and sensor-failure detection and a correlation
-        analysis. A Random Forest model then ranked which sensors to invest in
-        by their impact on yield.
+        to build anomaly and sensor-failure detection. A Random Forest model
+        then ranked which sensors to invest in by their impact on yield.
       stack: [Python, scikit-learn]  # TODO confirm
-
-    - id: rl-playground
-      title: RL Playground
-      years: 2026–present
-      body: >-
-        A running set of reinforcement learning agents I implement from
-        scratch, DQN, Double DQN and REINFORCE, trained across tabular and
-        Gymnasium environments.
-      stack: [Python, PyTorch, Gymnasium]  # TODO confirm PyTorch
-      links:
-        - label: Code
-          url: https://github.com/shilu-stha/rlplayground
 
     - id: flappy-bird-rl
       title: Deep RL for autonomous agents
       years: 2025–2026
+      motif: agent
       body: >-
         An agent that learns to play Flappy Bird purely by trial and error in a
         simulated Gymnasium environment.
@@ -106,47 +99,70 @@
     - id: support-ticket-classifier
       title: Support ticket classifier
       years: 2025–2026
+      motif: text
       body: >-
         An NLP pipeline for routing support tickets, using a custom domain
         dictionary and POS-tagged lemmatisation. It reached 98.38% accuracy.
       stack: [Python, NLP]
 
     - id: age-gender-cnn
-      title: CNN for age and gender classification
+      title: CNN for age and gender
       years: 2025–2026
+      motif: conv
       body: >-
-        A convolutional network that predicts age and classifies gender from raw
-        images, with 87% prediction accuracy.
+        A convolutional network that predicts age and classifies gender from
+        raw images, with 87% prediction accuracy.
       stack: [Python, Deep Learning]
 
-- group: Personal projects
+- id: personal
+  group: Personal projects
+  intro: Things I build because I want them to exist.
+  icon: personal
+  layout: cards
   items:
     - id: nepal-disaster-ledger
       title: Nepal Disaster Ledger
       years: 2026
+      motif: ledger
       body: >-
-        Disaster impact and response data for Nepal, reconciled across
-        government and humanitarian sources. Every figure stays next to its
-        source and date instead of being blended into one number. It pulls live
-        incident data from Nepal's BIPAD portal, and a Claude-backed query box
-        answers questions grounded only in that data.
-      stack: [Python, FastAPI, Claude API, React, Vite]
+        Disaster data for Nepal, reconciled across government and humanitarian
+        sources. Every figure stays next to its source and date instead of being
+        blended into one number, and a Claude-backed query box answers questions
+        grounded only in that data.
+      stack: [Python, FastAPI, Claude API, React]
       links:
         - label: Live demo
           url: https://nepal-disaster-ledger.onrender.com
 
+    - id: rl-playground
+      title: RL Playground
+      years: 2026–present
+      motif: gridworld
+      body: >-
+        Reinforcement learning agents I implement from scratch, DQN, Double DQN
+        and REINFORCE, trained across tabular and Gymnasium environments.
+      stack: [Python, PyTorch, Gymnasium]  # TODO confirm PyTorch
+      links:
+        - label: Code
+          url: https://github.com/shilu-stha/rlplayground
+
     - id: heard-before-said
       title: Heard Before Said
       draft: true
-      # TODO(Shilu): years, 2-3 sentences, stack, link.
+      # TODO(Shilu): years, 2-3 sentences, stack, link, motif.
       body: >-
         Placeholder. Needs a description before it goes live.
 
-- group: Industry
+- id: industry
+  group: Industry
+  intro: Ten years of shipping and leading production systems before the MSc.
+  icon: industry
+  layout: rows
   items:
     - id: danphe
       title: Danphe Software Labs
       years: 2024–2025
+      motif: rag
       body: >-
         As a senior engineer I built a production RAG system on GPT-4o that
         powers AI buying suggestions and chat. I also refactored a legacy
@@ -189,7 +205,10 @@
         image: /assets/img/chitooo.png
         logo: true
 
-- group: Earlier apps
+- id: apps
+  group: Earlier apps
+  icon: apps
+  layout: cards
   items:
     - id: fluid
       title: Fluid (we-commerce)
