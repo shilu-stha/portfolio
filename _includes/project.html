@@ -2,7 +2,7 @@
 {% assign p = include.p %}
 {% capture visual %}
   {% if p.media.video %}
-  <video controls muted playsinline preload="metadata" src="{{ p.media.video | relative_url }}"{% if p.media.poster %} poster="{{ p.media.poster | relative_url }}"{% endif %}></video>
+  <video controls muted loop playsinline preload="none" src="{{ p.media.video | relative_url }}"{% if p.media.poster %} poster="{{ p.media.poster | relative_url }}"{% endif %}></video>
   {% elsif p.media.youtube %}
   <iframe src="https://www.youtube-nocookie.com/embed/{{ p.media.youtube }}" title="{{ p.title }} demo" loading="lazy" allowfullscreen></iframe>
   {% elsif p.media.image %}
