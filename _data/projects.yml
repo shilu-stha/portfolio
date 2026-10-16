@@ -28,8 +28,9 @@
       stack: [TypeScript, Electron, Vue, WebSockets, Unity, C#, OSC]
       # Private lab repo: no public link.
       media:
-        # TODO: screen recording of an avatar tracking a live performer.
-        caption: Live IRIS pose driving a Unity avatar.
+        video: /assets/video/vr-quest-demo.mp4
+        poster: /assets/video/vr-quest-demo.jpg
+        caption: Two cameras and no suit, with live IRIS tracking driving a VRChat avatar on a Meta Quest.
 
     - id: iris-starter-kit
       title: iris-starter-kit
@@ -43,8 +44,25 @@
         backpressure so a slow renderer never stalls tracking.
       stack: [TypeScript, Electron, Vue, Node.js]
       media:
-        # TODO: screen recording of camera setup -> capture area -> live skeleton.
-        caption: Camera setup to live skeleton in under a minute.
+        video: /assets/video/starter-kit-demo.mp4
+        poster: /assets/video/starter-kit-demo.jpg
+        caption: Two webcams to a live 133-joint skeleton.
+
+    - id: iris-biomechanics
+      title: IRIS Biomechanics
+      years: 2026–present
+      motif: lens
+      body: >-
+        Movement assessment on top of IRIS. I added a biomechanics module to
+        IRIS Core that turns 3D keypoints into standard joint angles, and built
+        the app side: a live squat assessment that counts reps and scores each
+        one for depth, knees caving in, forward lean and left/right balance,
+        plus session recording and replay.
+      stack: [C++, TypeScript, Electron, Vue]
+      media:
+        video: /assets/video/biomech-demo.mp4
+        poster: /assets/video/biomech-demo.jpg
+        caption: Live squat assessment, with each rep scored as it finishes.
 
     - id: recapture-iris
       title: Recapture IRIS and IRIS Core

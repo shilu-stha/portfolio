@@ -14,3 +14,7 @@ vendor
 Gemfile.lock
 
 beautiful-jekyll-theme-*.gem
+# raw screen recordings; only the trimmed *-demo clips are published
+assets/video/*
+!assets/video/*-demo.mp4
+!assets/video/*-demo.jpg
